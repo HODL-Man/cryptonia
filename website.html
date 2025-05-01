@@ -1,0 +1,374 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cryptonia - Cry Token</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Audiowide', sans-serif;
+      background-color: #0e0e0e;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+        url('assets/spacenebel.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #d6cfa5;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    nav a {
+      color: #d6cfa5;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .headline {
+      text-align: center;
+      margin-top: 60px;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.1;
+    }
+
+    .headline .main {
+      font-size: 72px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 0 12px #ffffffaa, 0 0 20px #d4af37aa;
+    }
+
+    .headline .sub {
+      font-size: 32px;
+      margin: 0;
+      color: #ffffff;
+      text-shadow: 0 0 8px #ffffff88, 0 0 12px #d4af37aa;
+    }
+
+    .headline .sub span.black {
+      color: black;
+      text-shadow: none;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .media-center {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .media-center img,
+    .media-center video {
+      max-width: 75%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: #d6cfa5;
+      margin-bottom: 40px;
+    }
+
+    .centered {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .centered img {
+      width: 340px;
+    }
+
+    .tagline {
+      font-size: 26px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 12px #ffffffaa, 0 0 20px #d4af37aa;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 16px;
+      color: #d6cfa5;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 80px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0,0,0,0.95);
+    }
+
+    .modal-content {
+      background-color: #1a1a1a;
+      margin: auto;
+      padding: 40px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 800px;
+      color: #d6cfa5;
+      border-radius: 10px;
+      font-size: 18px;
+      line-height: 1.6;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .modal h2 {
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 0 12px #ffffffaa, 0 0 20px #d4af37aa;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #fff;
+    }
+
+    .highlight-glow {
+      font-size: 18px;
+      color: #ffffff;
+      text-shadow: 0 0 12px #ffffffaa, 0 0 20px #d4af37aa;
+    }
+
+    .glow-text {
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 0 0 12px #ffffffaa, 0 0 20px #d4af37aa;
+    }
+
+    .soon-icon {
+      display: inline-block;
+      background: #8a2be2;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      margin-left: 8px;
+      text-shadow: 0 0 6px #b58eff;
+    }
+
+    .buy-cry-button {
+      background: rgba(214, 207, 165, 0.15);
+      color: #d6cfa5;
+      font-weight: bold;
+      padding: 6px 14px;
+      font-size: 14px;
+      border: 1px solid rgba(214, 207, 165, 0.4);
+      border-radius: 20px;
+      box-shadow: 0 0 4px rgba(214, 207, 165, 0.4);
+      text-decoration: none;
+      animation: pulse 1.8s infinite;
+      transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+    }
+
+    .buy-cry-button:hover {
+      background: rgba(214, 207, 165, 0.25);
+      box-shadow: 0 0 10px rgba(214, 207, 165, 0.6);
+      transform: scale(1.05);
+      color: #ffffff;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Cry Contract</a>
+    <a href="#" class="buy-cry-button">Buy $Cry</a>
+    <a href="https://x.com/HODLcrytoken" target="_blank">Twitter</a>
+    <a id="openCrypaper">Crypaper</a>
+  </nav>
+
+  <div class="headline">
+    <h1 class="main">MASTERS</h1>
+    <h2 class="sub"><span class="black">of the</span> Cryptoverse</h2>
+  </div>
+
+  <section>
+    <div class="media-center">
+      <img src="assets/var.jpg" alt="HODL-Man Crypto" />
+    </div>
+
+    <p style="text-transform: uppercase;">
+      In a distant world called <strong>Cryptonia</strong>, ruled by cryptocurrencies and blockchain technology, unrest was brewing.
+      A nasty villain named <strong>Fiator</strong>, aided by his government minions, was trying to suppress the peaceful crypto community
+      and destroy their decentralised dreams.
+    </p>
+
+    <p>
+      The people of Cryptonia found themselves in crisis as <strong>Fiator</strong> imposed strict regulations, attempting to ban their decentralised heroes.
+      Amidst this crypto chaos, <strong>HODL-Man</strong> — the guardian of the blockchain — emerged from the shadows.
+    </p>
+
+    <p>
+      Armed with his legendary sword, <em>the Decentraliser</em>, <strong>HODL-Man</strong> entered the fray. His muscular form gleamed with crypto-gold,
+      and atop his head rose the majestic horns of a charging bull — the symbol of unstoppable bullish force.
+    </p>
+
+    <div class="media-center">
+      <video src="assets/f.webm" autoplay loop muted></video>
+    </div>
+
+    <p>
+      With a roar that echoed across the blockchain, <strong>HODL-Man</strong> faced down <strong>Fiator</strong> and his bureaucratic army.
+      His sword tore through red tape as he bellowed:<br /><br />
+      <strong>"By the power of the Blockchain, I have the decentralisation!"</strong><br /><br />
+      The people watched, entranced, as he shattered the chains of oppression and reignited the fires of free crypto trade.
+    </p>
+
+    <p>
+      In gratitude, the crypto community forged a digital tribute — a <strong>meme token</strong> celebrating their hero.
+      They named it <strong>Cry</strong> — a shining symbol of resistance and hope.
+    </p>
+
+    <div class="media-center">
+      <video src="assets/cvf.webm" autoplay loop muted></video>
+    </div>
+
+    <p>
+      Thus, the <strong>Cryptonia website</strong> was born — a legendary hub where users could immerse themselves in the myth of <strong>HODL-Man</strong>,
+      trade their <strong>Cry tokens</strong>, and join the revolution of decentralisation.
+    </p>
+
+    <p>
+      <strong>Cry</strong> is more than a token — it's a cry for freedom. Each purchase, each trade, each HODL is a blow against centralisation.
+      Together, the crypto community rises, empowered and united.
+    </p>
+
+    <p>
+      <strong>Cry shines</strong> as the digital shield of the people, protecting them from the grip of outdated systems. Cryptonia now thrives in a golden age of liberty, 
+      with <strong>HODL-Man</strong> watching over as an eternal sentinel of the blockchain.
+    </p>
+
+    <div class="centered">
+      <img src="assets/j6.jpg" alt="HODL-Man Logo" />
+      <div class="tagline">By the power of the Blockchain, I have the decentralisation!</div>
+    </div>
+
+    <p class="centered glow-text" style="margin-top: 60px;">
+      <strong>Join the resistance. Trade $Cry. Fuel the decentralisation.</strong>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Cryptonia. All rights decentralised.
+  </footer>
+
+  <div id="crypaperModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>📜 The Crypaper<br />The Official Manifesto of HODL-Man & the Decentralised Resistance</h2>
+      <p>🪙 <strong>Token Overview</strong><br />
+      Token Name: Cry<br />
+      Symbol: $CRY<br />
+      Network: Solana<br />
+      Total Supply: 1,000,000,000<br />
+      No taxes. No fake promises. Just meme energy.</p>
+
+      <p>🦾 <strong>The Lore</strong><br />
+      In the pixelated world of Cryptonia, one hero rose. Bold, buff, and blockchain-born.<br />
+      When evil struck, he didn’t fork — he fought.<br />
+      From his battle cry came a beacon of hope: the $CRY token.</p>
+
+      <p>🎯 <strong>Mission</strong><br />
+      To defend decentralisation.<br />
+      To weaponise memes.<br />
+      To laugh, to HODL, to Cry — together.</p>
+
+      <p>💡 <strong>Utility</strong><br />
+      - Existential meme value<br />
+      - Cultural rebellion<br />
+      - Digital collectible vibes<br />
+      - Probably won’t change your life, but it might make you smile</p>
+
+      <p>🗺️ <strong>Roadmap</strong><br />
+      <strong>Phase 1</strong><br />
+      ✅ Launch $CRY<br />
+      ✅ Website goes live<br />
+      ✅ Twitter noise<br /><br />
+
+      <strong>Phase 2</strong><br />
+      🎨 Meme wars<br />
+      📢 Listings (CMC, CG)<br />
+      👕 Merch (HODL Hoodies?)<br /><br />
+
+      <strong>Phase 3</strong><br />
+      🌑 Solana pump synergy<br />
+      🏛️ DAO: Decentralised Army of Outlaws<br />
+      🧱 Build shrine to HODL-Man in the metaverse<br />
+      🎭 NFTs<span class="soon-icon">SOON →</span></p>
+
+      <p class="highlight-glow" style="text-align: center; margin-top: 40px;">
+        Cry loud. HODL proud. Join the resistance.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("openCrypaper").onclick = function() {
+      document.getElementById("crypaperModal").style.display = "block";
+    };
+    document.getElementById("closeModal").onclick = function() {
+      document.getElementById("crypaperModal").style.display = "none";
+    };
+    window.onclick = function(event) {
+      const modal = document.getElementById("crypaperModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+
+</body>
+</html>
