@@ -29,7 +29,7 @@ This isn’t just about price. $CRY is a symbol for freedom, decentralization, a
 - 📊 Birdeye Chart: [View](https://birdeye.so/token/FpJRKWjpETJhQKoF7MGM5Brw6vzZVbnJb5aab78WFkAk?chain=solana&tab=trades)  
 - 🔁 Jupiter DEX: [Trade $CRY](https://jup.ag/tokens/FpJRKWjpETJhQKoF7MGM5Brw6vzZVbnJb5aab78WFkAk)  
 - 📣 Twitter / X: [@hodlcryptonia](https://x.com/HODLcrytoken)  
-- 💬 Telegram Channel: [@joincryptonia](https://t.me/joincry)
+- 💬 Telegram Channel: [@joincryptonia](https://t.me/joincryptonia)
 
 ---
 
