@@ -38,7 +38,7 @@ This isn’t just about price. $CRY is a symbol for freedom, decentralization, a
 - Contract Address: `FpJRKWjpETJhQKoF7MGM5Brw6vzZVbnJb5aab78WFkAk`
 - Chain: Solana  
 - Verified: ✅  
-- Audit: [View Audit Image](./A_Smart_Contract_Audit_Report_for_Cry_Token_($CRY).png) *(upload image to repo)*
+- Audit: [View Audit Image]([./A_Smart_Contract_Audit_Report_for_Cry_Token_($CRY).png](https://github.com/HODL-Man/cryptonia/blob/main/Smart%20Contract%20Audit%20Bericht%20f%C3%BCr%20Cry%20Token.png) 
 
 ---
 
